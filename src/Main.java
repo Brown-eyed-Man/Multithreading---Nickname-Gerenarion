@@ -19,16 +19,16 @@ public class Main {
 
         Runnable logic1 = () -> {
             for (String text : texts) {
-                //Подробнее о isPalindrome в самом методе.
-                if (text.length() == 3 && !isPalindrome(text, 3)) {
+                //Подробнее о areAllLettersTheSame в самом методе.
+                if (text.length() == 3 && !areAllLettersTheSame(text, 3)) {
                     if (text.charAt(0) == text.charAt(2)) {
                         niceWord3lettersCounter.getAndIncrement();
                     }
-                } else if (text.length() == 4 && !isPalindrome(text, 4)) {
+                } else if (text.length() == 4 && !areAllLettersTheSame(text, 4)) {
                     if ((text.charAt(0) == text.charAt(3)) && (text.charAt(1) == text.charAt(2))) {
                         niceWord4lettersCounter.getAndIncrement();
                     }
-                } else if (text.length() == 5 && !isPalindrome(text, 5)) {
+                } else if (text.length() == 5 && !areAllLettersTheSame(text, 5)) {
                     if ((text.charAt(0) == text.charAt(4)) && (text.charAt(1) == text.charAt(3))) {
                         niceWord5lettersCounter.getAndIncrement();
                     }
@@ -125,7 +125,7 @@ public class Main {
     Без данной проверки у нас будет засчитано красивых слов с длиной 3, 4 и 5 как 2, хотя по факту
     их по 1 шт., что выходит из логики.
      */
-    public static boolean isPalindrome(String text, int letterQuantity) {
+    public static boolean areAllLettersTheSame(String text, int letterQuantity) {
         if (text.length() == letterQuantity) {
             int counter = 0;
             for (int i = 0; i < text.length(); i++) {
